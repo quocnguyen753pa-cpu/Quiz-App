@@ -20,13 +20,16 @@ const QuizSettings = () => {
 
   const handleQuizStart = () => {
     router.push(
-      `/questions?category=${category}&difficulty=${difficulty}&limit=${limit[0]}`
+      "/questions"
     );
+    // router.push(
+    //   `/questions?category=${category}&difficulty=${difficulty}&limit=${limit[0]}`
+    // );
   };
 
   return (
     <div className="flex flex-col justify-center items-center gap-4 md:gap-6">
-      <Select value={category} onValueChange={(value) => setCategory(value)}>
+      {/* <Select value={category} onValueChange={(value) => setCategory(value)}>
         <SelectTrigger className="w-full md:max-w-xs xl:max-w-md">
           <SelectValue placeholder="Category" />
         </SelectTrigger>
@@ -37,8 +40,8 @@ const QuizSettings = () => {
             </SelectItem>
           ))}
         </SelectContent>
-      </Select>
-      <Select
+      </Select> */}
+      {/* <Select
         value={difficulty}
         onValueChange={(value) => setDifficulty(value)}
       >
@@ -52,19 +55,22 @@ const QuizSettings = () => {
             </SelectItem>
           ))}
         </SelectContent>
-      </Select>
-      <p className="text-sm lg:text-sm font-semibold">
+      </Select> */}
+      {/* <p className="text-sm lg:text-sm font-semibold">
         Total Questions: {limit[0]}
-      </p>
-      <Slider
+      </p> */}
+      {/* <Slider
         value={limit}
         onValueChange={(value) => setLimit(value)}
         max={50}
         step={5}
         min={5}
         className="w-full md:max-w-xs xl:max-w-md"
-      />
-      <Button disabled={!difficulty || !category} onClick={handleQuizStart}>
+      /> */}
+      {/* <Button disabled={!difficulty || !category} onClick={handleQuizStart}>
+        Start Quiz
+      </Button> */}
+      <Button onClick={handleQuizStart}>
         Start Quiz
       </Button>
     </div>
