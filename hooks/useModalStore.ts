@@ -1,10 +1,15 @@
 import { create } from "zustand";
 
-export type modalType = "showResults" | "quitQuiz";
+export type modalType = "showResults" | "quitQuiz" | "continueQuiz";
 
 interface AdditionalData {
   score?: number;
   limit?: number;
+  isWrongCrit?: boolean;
+  isTest?: boolean;
+  redirectUrl?: string;
+  username?: string;
+  category?: string;
 }
 
 interface modalStore {

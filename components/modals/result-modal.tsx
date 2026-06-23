@@ -21,14 +21,17 @@ const ResultModal = () => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-center text-xl md:text-2xl">
-            Quiz Result
+            Kết quả
           </DialogTitle>
         </DialogHeader>
         <Separator />
         <div className="flex flex-col items-center py-4 md:py-6">
           <p className="text-lg md:2xl text-primary font-semibold tracking-wide">
-            You scored: {`${additionalData?.score}/${additionalData?.limit}`}
+            Điểm của bạn: {`${additionalData?.score}/${additionalData?.limit}`}
           </p>
+          {additionalData.isTest ? <p className="text-lg md:2xl text-primary font-semibold tracking-wide">
+            Sai câu điểm liệt: {additionalData.isWrongCrit ? 'Có' : 'Không'}
+          </p> : <></>}
           <Button
             onClick={() => {
               router.push("/");
@@ -36,7 +39,7 @@ const ResultModal = () => {
             }}
             className="mt-3 md:mt-5"
           >
-            Play Again
+            Thử lại
           </Button>
         </div>
       </DialogContent>

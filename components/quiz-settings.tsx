@@ -1,6 +1,7 @@
 "use client";
+
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
@@ -9,69 +10,69 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { Slider } from "@/components/ui/slider";
-import { categoryOptions, difficultyOptions } from "@/constants";
+import { Category, categoryProfiles, PROFILES_KEY } from "@/constants";
+import { User } from "@/constants/user";
+import useModalStore from "@/hooks/useModalStore";
 
 const QuizSettings = () => {
   const router = useRouter();
-  const [category, setCategory] = useState<string>("");
-  const [difficulty, setDifficulty] = useState<string>("");
-  const [limit, setLimit] = useState([10]);
+  const { onOpen } = useModalStore();
+  const [username, setUsername] = useState<string>("");
+  const [usernameList, setUsernameList] = useState<string[]>([]);
+  const [category, setCategory] = useState<string>(Category.all_gplx_600);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(PROFILES_KEY);
+      if (raw) {
+        const profiles: User[] = JSON.parse(raw);
+        setUsernameList(profiles.map(p => p.username));
+      }
+    } catch { }
+  }, []);
 
   const handleQuizStart = () => {
-    router.push(
-      "/questions"
-    );
-    // router.push(
-    //   `/questions?category=${category}&difficulty=${difficulty}&limit=${limit[0]}`
-    // );
+    const url = `/questions?category=${category}&username=${username}`;
+    const isTest = categoryProfiles.find(c => c.value === category)?.isTest ?? false;
+    if (isTest) {
+      router.push(url);
+      return;
+    }
+    try {
+      const raw = localStorage.getItem(PROFILES_KEY);
+      if (raw) {
+        const profiles: User[] = JSON.parse(raw);
+        const profile = profiles.find(p => p.username === username);
+        const saved = profile?.saveAnswers.find(s => s.category === category);
+        if (saved?.answers.length) {
+          onOpen("continueQuiz", { redirectUrl: url, username, category });
+          return;
+        }
+      }
+    } catch { }
+    router.push(url);
   };
 
   return (
     <div className="flex flex-col justify-center items-center gap-4 md:gap-6">
-      {/* <Select value={category} onValueChange={(value) => setCategory(value)}>
+      <input list="user-list" value={username} onInput={(e) => setUsername(e.currentTarget.value)} placeholder="Tên người dùng" className="flex h-10 items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-full md:max-w-xs xl:max-w-md" />
+      <datalist id="user-list">
+        {usernameList.map(u => <option key={u} value={u} />)}
+      </datalist>
+      <Select value={category} onValueChange={(value) => setCategory(value)}>
         <SelectTrigger className="w-full md:max-w-xs xl:max-w-md">
-          <SelectValue placeholder="Category" />
+          <SelectValue placeholder="=== Chọn danh mục ===" />
         </SelectTrigger>
         <SelectContent>
-          {categoryOptions.map((category) => (
+          {categoryProfiles.map((category) => (
             <SelectItem value={category.value} key={category.value}>
-              {category.option}
+              {category.label}
             </SelectItem>
           ))}
         </SelectContent>
-      </Select> */}
-      {/* <Select
-        value={difficulty}
-        onValueChange={(value) => setDifficulty(value)}
-      >
-        <SelectTrigger className="w-full md:max-w-xs xl:max-w-md">
-          <SelectValue placeholder="Difficulty" />
-        </SelectTrigger>
-        <SelectContent>
-          {difficultyOptions.map((difficulty) => (
-            <SelectItem value={difficulty.value} key={difficulty.value}>
-              {difficulty.option}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select> */}
-      {/* <p className="text-sm lg:text-sm font-semibold">
-        Total Questions: {limit[0]}
-      </p> */}
-      {/* <Slider
-        value={limit}
-        onValueChange={(value) => setLimit(value)}
-        max={50}
-        step={5}
-        min={5}
-        className="w-full md:max-w-xs xl:max-w-md"
-      /> */}
-      {/* <Button disabled={!difficulty || !category} onClick={handleQuizStart}>
-        Start Quiz
-      </Button> */}
-      <Button onClick={handleQuizStart}>
-        Start Quiz
+      </Select>
+      <Button disabled={!category || !username} onClick={handleQuizStart}>
+        Bắt đầu
       </Button>
     </div>
   );

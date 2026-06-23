@@ -1,21 +1,22 @@
 import Questions from "@/components/questions";
-import { categoryOptions, difficultyOptions } from "@/constants";
-import { redirect } from "next/navigation";
+import { Question } from "@/constants/question";
+import { Category, categoryProfiles, PROFILES_KEY } from "@/constants";
 import "./questions.css";
+import { User } from "@/constants/user";
 
 export const fetchCache = "force-no-store";
 
 type Props = {
   searchParams: {
-    category: string;
-    difficulty: string;
-    limit: string;
-  };
+    category: Category
+    username: string
+  }
 };
 
-async function getData() {
+async function getData(category: Category) {
+  const base_url = process.env.APP_URL ?? "http://localhost:3000";
   const res = await fetch(
-    "http://localhost:3000/api/v1/questions",
+    `${base_url}/api/v1/questions?category=${category}`,
     {
       method: "GET",
       headers: {
@@ -31,16 +32,35 @@ async function getData() {
   return res.json();
 }
 
-const QuestionsPage = async () => {
-  const response = await getData();
+function getUser(username: string) {
+  try {
+    const raw = localStorage.getItem(PROFILES_KEY);
+    if (raw) {
+      const profiles: User[] = JSON.parse(raw);
+      const profile = profiles.find(p => p.username === username);
+      if (profile)
+        return profile;
+    }
+  } catch { /* ignore corrupt data */ }
+  return { username, saveAnswers: [] } as User
+}
+
+const QuestionsPage = async ({ searchParams }: Props) => {
+  const durationDefault = Number(process.env.APP_TEST_DURATION ?? 20 * 60);
+  const { category, username } = searchParams;
+  const questions = (await getData(category)) as Question[];
+  const categoryProfile = categoryProfiles.find(c => c.value === category);
+  const isTest = categoryProfile?.isTest ?? false;
+  const duration = isTest ? durationDefault : null;
+  const user = getUser(username);
 
   return (
     <Questions
-      questions={response}
-      limit={600}
-      category='gplx_600'
-      duration={null}
-      currentQuestion={0}
+      questions={questions}
+      category={category}
+      duration={duration}
+      isTest={isTest}
+      user={user}
     />
   );
 };

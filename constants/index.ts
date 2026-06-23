@@ -1,22 +1,24 @@
-export const categoryOptions = [
-  {
-    value: "gplx_600",
-    option: "GPLX-600",
-  },
-];
+export enum Category {
+  all_gplx_600 = 'all_gplx_600',
+  crit_gplx_600 = 'crit_gplx_600',
+  test = 'test',
+}
 
-export const difficultyOptions = [
+export const categoryProfiles = [
   {
-    value: "easy",
-    option: "Easy",
+    value: Category.all_gplx_600,
+    label: "Toàn bộ 600 câu hỏi",
+    isTest: false,
   },
   {
-    value: "medium",
-    option: "Medium",
+    value: Category.crit_gplx_600,
+    label: "Ôn tập 17 câu điểm liệt",
+    isTest: false,
   },
   {
-    value: "hard",
-    option: "Hard",
+    value: Category.test,
+    label: "Thi thử",
+    isTest: true,
   },
 ];
 
@@ -26,7 +28,12 @@ export const alphabeticNumeral = (index: number) => {
   return letter + ". ";
 };
 
-export const showCategory = (category: string) => {
-  if (category === "gplx_600") return "GPLX 600";
-  else return "Unknown";
+export const showCategory = (category: Category) => {
+  const result = categoryProfiles.find(c => c.value === category);
+  if (result) {
+    return result.label;
+  }
+  return "Unknown";
 };
+
+export const PROFILES_KEY = 'quiz-profiles';

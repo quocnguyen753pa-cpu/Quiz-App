@@ -19,3 +19,16 @@
 .option:disabled {
   @apply bg-white;
 }
+
+.option.selected {
+  @apply text-white bg-primary/80;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

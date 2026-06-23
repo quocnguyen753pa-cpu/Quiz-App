@@ -22,15 +22,15 @@ const QuitQuizModal = () => {
     <AlertDialog open={open} onOpenChange={onClose}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>Bạn có muốn thoát khỏi tiến trình?</AlertDialogTitle>
           <AlertDialogDescription>
-            Your progress will be lost.
+            Bạn có chắc muốn thoát không?
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>Huỷ</AlertDialogCancel>
           <AlertDialogAction onClick={() => router.push("/")}>
-            Confirm
+            Đồng ý
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
