@@ -763,7 +763,7 @@
         ],
         "ans": 2,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 35,
@@ -790,7 +790,7 @@
         ],
         "ans": 4,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 3)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 36,
@@ -1071,7 +1071,7 @@
         ],
         "ans": 2,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 48,
@@ -1094,7 +1094,7 @@
         ],
         "ans": 3,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 49,
@@ -1182,7 +1182,7 @@
         ],
         "ans": 1,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 53,
@@ -1205,7 +1205,7 @@
         ],
         "ans": 1,
         "tip": "💡 'Không được' → Chọn hành vi bị cấm hoàn toàn",
-        "crit": false
+        "crit": true
     },
     {
         "id": 54,
@@ -1251,7 +1251,7 @@
         ],
         "ans": 1,
         "tip": "💡 'Không được' → Chọn hành vi bị cấm hoàn toàn",
-        "crit": false
+        "crit": true
     },
     {
         "id": 56,
@@ -1328,7 +1328,7 @@
         ],
         "ans": 4,
         "tip": "💡 'Không được' → Chọn hành vi bị cấm hoàn toàn",
-        "crit": false
+        "crit": true
     },
     {
         "id": 59,
@@ -1455,7 +1455,7 @@
         ],
         "ans": 4,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 64,
@@ -1474,7 +1474,7 @@
         ],
         "ans": 1,
         "tip": "💡 'Không được' → Chọn hành vi bị cấm hoàn toàn",
-        "crit": false
+        "crit": true
     },
     {
         "id": 65,
@@ -1501,7 +1501,7 @@
         ],
         "ans": 1,
         "tip": "💡 'Không được' → Chọn hành vi bị cấm hoàn toàn",
-        "crit": false
+        "crit": true
     },
     {
         "id": 66,
@@ -1528,7 +1528,7 @@
         ],
         "ans": 4,
         "tip": "💡 'Không được' → Chọn hành vi bị cấm hoàn toàn",
-        "crit": false
+        "crit": true
     },
     {
         "id": 67,
@@ -1555,7 +1555,7 @@
         ],
         "ans": 4,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 68,
@@ -1578,7 +1578,7 @@
         ],
         "ans": 1,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 2)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 69,
@@ -1628,7 +1628,7 @@
         ],
         "ans": 4,
         "tip": "💡 'Không được' → Chọn hành vi bị cấm hoàn toàn",
-        "crit": false
+        "crit": true
     },
     {
         "id": 71,
@@ -1651,7 +1651,7 @@
         ],
         "ans": 3,
         "tip": "💡 'Không được' → Chọn hành vi bị cấm hoàn toàn",
-        "crit": false
+        "crit": true
     },
     {
         "id": 72,
@@ -1674,7 +1674,7 @@
         ],
         "ans": 2,
         "tip": "💡 'Không được' → Chọn hành vi bị cấm hoàn toàn",
-        "crit": false
+        "crit": true
     },
     {
         "id": 73,
@@ -1701,7 +1701,7 @@
         ],
         "ans": 3,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 74,
@@ -1724,7 +1724,7 @@
         ],
         "ans": 2,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 75,
@@ -1981,7 +1981,7 @@
         ],
         "ans": 3,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 2)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 86,
@@ -2004,7 +2004,7 @@
         ],
         "ans": 3,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 2)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 87,
@@ -2027,7 +2027,7 @@
         ],
         "ans": 1,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 3)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 88,
@@ -2054,7 +2054,7 @@
         ],
         "ans": 4,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 89,
@@ -2077,7 +2077,7 @@
         ],
         "ans": 2,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 90,
@@ -2100,7 +2100,7 @@
         ],
         "ans": 1,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 2)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 91,
@@ -2123,7 +2123,7 @@
         ],
         "ans": 3,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 3)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 92,
@@ -2146,7 +2146,7 @@
         ],
         "ans": 2,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 93,
@@ -2169,7 +2169,7 @@
         ],
         "ans": 1,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 94,
@@ -2265,7 +2265,7 @@
         ],
         "ans": 3,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 98,
@@ -2292,7 +2292,7 @@
         ],
         "ans": 1,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 99,
@@ -2388,7 +2388,7 @@
         ],
         "ans": 4,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 3)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 103,
@@ -2507,7 +2507,7 @@
         ],
         "ans": 4,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 108,
@@ -2737,7 +2737,7 @@
         ],
         "ans": 4,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 3)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 118,
@@ -3835,7 +3835,7 @@
         ],
         "ans": 1,
         "tip": "💡 Tốc độ: Khu dân cư ≤50km/h | Ngoài đô thị ≤80km/h | Cao tốc ≤120km/h",
-        "crit": false
+        "crit": true
     },
     {
         "id": 164,
@@ -3885,7 +3885,7 @@
         ],
         "ans": 4,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 3)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 166,
@@ -4652,7 +4652,7 @@
         ],
         "ans": 1,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 199,
@@ -4848,7 +4848,7 @@
         ],
         "ans": 1,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 207,
@@ -5035,7 +5035,7 @@
         ],
         "ans": 1,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 216,
@@ -5276,7 +5276,7 @@
         ],
         "ans": 2,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 227,
@@ -5481,7 +5481,7 @@
         ],
         "ans": 1,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 235,
@@ -5734,7 +5734,7 @@
         ],
         "ans": 1,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 246,
@@ -5757,7 +5757,7 @@
         ],
         "ans": 1,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 247,
@@ -5891,7 +5891,7 @@
         ],
         "ans": 1,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 253,
@@ -5914,7 +5914,7 @@
         ],
         "ans": 1,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 3)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 254,
@@ -5937,7 +5937,7 @@
         ],
         "ans": 2,
         "tip": "💡 Câu 'phải/quan sát/nhường' → Chọn đáp án đầy đủ nhất (thường đáp án 1)",
-        "crit": false
+        "crit": true
     },
     {
         "id": 255,
@@ -5960,7 +5960,7 @@
         ],
         "ans": 3,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 256,
@@ -6087,7 +6087,7 @@
         ],
         "ans": 3,
         "tip": "📖 Đọc kỹ câu hỏi, chú ý từ khóa quan trọng",
-        "crit": false
+        "crit": true
     },
     {
         "id": 261,
