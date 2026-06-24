@@ -50,6 +50,7 @@ const QuestionsPage = async ({ searchParams }: Props) => {
   const { category, username } = searchParams;
   const questions = (await getData(category)) as Question[];
   const categoryProfile = categoryProfiles.find(c => c.value === category);
+  const isSave = categoryProfile?.isSave ?? false;
   const isTest = categoryProfile?.isTest ?? false;
   const duration = isTest ? durationDefault : null;
   const user = getUser(username);
@@ -59,6 +60,7 @@ const QuestionsPage = async ({ searchParams }: Props) => {
       questions={questions}
       category={category}
       duration={duration}
+      isSave={isSave}
       isTest={isTest}
       user={user}
     />

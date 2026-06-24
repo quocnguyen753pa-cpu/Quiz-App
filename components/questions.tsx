@@ -12,11 +12,13 @@ import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 type Props = {
   questions: Question[]
   category: Category
   duration: number | null
+  isSave: boolean
   isTest: boolean
   user: User
 };
@@ -29,12 +31,13 @@ const handleSelect = (optText: string, selectedText: string, question: Question)
   return "";
 };
 
-const Questions = ({ questions, category, duration, isTest, user }: Props) => {
+const Questions = ({ questions, category, duration, isSave, isTest, user }: Props) => {
   const [curr, setCurr] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Answer[]>([]);
   const [pendingOption, setPendingOption] = useState<number>(-1);
   const [isTimeUp, setIsTimeUp] = useState<boolean>(false);
   const { onOpen } = useModalStore();
+  const router = useRouter();
 
   const currentAnswer = userAnswers.find(ua => ua.id === questions[curr].id);
   const isSubmitted = !!currentAnswer;
@@ -70,7 +73,7 @@ const Questions = ({ questions, category, duration, isTest, user }: Props) => {
     const newAnswer: Answer = { id: questions[curr].id, ans: pendingOption };
     const updated = [...userAnswers.filter(ua => ua.id !== questions[curr].id), newAnswer];
     setUserAnswers(updated);
-    if (!isTest) saveProfile(updated, curr);
+    if (isSave) saveProfile(updated, curr);
   };
 
   const handleTestOptionClick = (optN: number) => {
@@ -82,16 +85,20 @@ const Questions = ({ questions, category, duration, isTest, user }: Props) => {
   const handleNext = () => {
     const nextCurr = curr + 1;
     setCurr(nextCurr);
-    if (!isTest) saveProfile(userAnswers, nextCurr);
+    if (isSave) saveProfile(userAnswers, nextCurr);
   };
 
   const handleChangeCurr = (i: number) => {
     setCurr(i);
-    if (!isTest) saveProfile(userAnswers, i);
+    if (isSave) saveProfile(userAnswers, i);
   };
 
   const handleQuit = () => {
-    onOpen("quitQuiz");
+    if (!isSave) {
+      onOpen("quitQuiz");
+    } else {
+      router.push("/");
+    }
   };
 
   const handleShowResult = () => {
