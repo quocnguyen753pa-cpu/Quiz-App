@@ -21,16 +21,22 @@ const ResultModal = () => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-center text-xl md:text-2xl">
-            Kết quả
+            Kết quả - {additionalData.category}
           </DialogTitle>
         </DialogHeader>
         <Separator />
         <div className="flex flex-col items-center py-4 md:py-6">
           <p className="text-lg md:2xl text-primary font-semibold tracking-wide">
-            Điểm của bạn: {`${additionalData?.score}/${additionalData?.limit}`}
+            Điểm của bạn: {`${additionalData.score}/${additionalData.limit}`}
           </p>
           {additionalData.isTest ? <p className="text-lg md:2xl text-primary font-semibold tracking-wide">
             Sai câu điểm liệt: {additionalData.isWrongCrit ? 'Có' : 'Không'}
+          </p> : <></>}
+          {additionalData.correctQuestions ? <p className="text-lg md:2xl text-primary font-semibold tracking-wide">
+            Số câu cần đúng: {additionalData.correctQuestions}
+          </p> : <></>}
+          {(additionalData.correctQuestions && additionalData.isTest) ? <p className="text-lg md:2xl text-primary font-semibold tracking-wide">
+            Kết quả: {additionalData.score! >= additionalData.correctQuestions! ? "Đạt" : "Không đạt"}
           </p> : <></>}
           <Button
             onClick={() => {

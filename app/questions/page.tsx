@@ -46,13 +46,13 @@ function getUser(username: string) {
 }
 
 const QuestionsPage = async ({ searchParams }: Props) => {
-  const durationDefault = Number(process.env.APP_TEST_DURATION ?? 20 * 60);
   const { category, username } = searchParams;
   const questions = (await getData(category)) as Question[];
   const categoryProfile = categoryProfiles.find(c => c.value === category);
   const isSave = categoryProfile?.isSave ?? false;
   const isTest = categoryProfile?.isTest ?? false;
-  const duration = isTest ? durationDefault : null;
+  const duration = categoryProfile?.duration;
+  const correctQuestions = categoryProfile?.correctQuestions;
   const user = getUser(username);
 
   return (
@@ -63,6 +63,7 @@ const QuestionsPage = async ({ searchParams }: Props) => {
       isSave={isSave}
       isTest={isTest}
       user={user}
+      correctQuestions={correctQuestions}
     />
   );
 };

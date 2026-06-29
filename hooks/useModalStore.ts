@@ -7,6 +7,7 @@ interface AdditionalData {
   limit?: number;
   isWrongCrit?: boolean;
   isTest?: boolean;
+  correctQuestions?: number;
   redirectUrl?: string;
   username?: string;
   category?: string;

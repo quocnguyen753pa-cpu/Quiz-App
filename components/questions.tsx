@@ -17,7 +17,8 @@ import { useRouter } from "next/navigation";
 type Props = {
   questions: Question[]
   category: Category
-  duration: number | null
+  duration?: number
+  correctQuestions?: number
   isSave: boolean
   isTest: boolean
   user: User
@@ -31,11 +32,12 @@ const handleSelect = (optText: string, selectedText: string, question: Question)
   return "";
 };
 
-const Questions = ({ questions, category, duration, isSave, isTest, user }: Props) => {
+const Questions = ({ questions, category, duration, isSave, isTest, user, correctQuestions }: Props) => {
   const [curr, setCurr] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Answer[]>([]);
   const [pendingOption, setPendingOption] = useState<number>(-1);
   const [isTimeUp, setIsTimeUp] = useState<boolean>(false);
+  const [isAllSubmitted, setIsAllSubmitted] = useState<boolean>(false);
   const { onOpen } = useModalStore();
   const router = useRouter();
 
@@ -110,11 +112,15 @@ const Questions = ({ questions, category, duration, isSave, isTest, user }: Prop
       isTest,
       isWrongCrit,
       limit: questions.length,
+      correctQuestions: correctQuestions,
+      category: showCategory(category),
     });
+    setIsAllSubmitted(true);
   };
 
   const handleTimeUp = () => {
     setIsTimeUp(true);
+    setIsAllSubmitted(true);
     toast.info("Hết thời gian!");
     handleShowResult();
   };
@@ -177,7 +183,7 @@ const Questions = ({ questions, category, duration, isSave, isTest, user }: Prop
         {(duration ?? -1) > 0 && (
           <CountdownCircleTimer
             key="countdown-timer"
-            isPlaying={!isSubmitted}
+            isPlaying={!isAllSubmitted}
             duration={duration!}
             size={45}
             strokeWidth={4}
@@ -224,7 +230,7 @@ const Questions = ({ questions, category, duration, isSave, isTest, user }: Prop
                     ? handleSelect(opt.t, selectedText, questions[curr])
                     : opt.n === effectiveOption ? 'selected' : ''
               )}
-              disabled={!isTest && (isSubmitted || isTimeUp)}
+              disabled={isTest ? isAllSubmitted : (isSubmitted || isTimeUp)}
               onClick={() => isTest ? handleTestOptionClick(opt.n) : setPendingOption(opt.n)}
             >
               {alphabeticNumeral(i)}{opt.t}
